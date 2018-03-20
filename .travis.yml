@@ -11,6 +11,10 @@ matrix:
         - python: nightly
         - python: pypy
         - python: pypy3
+addons:
+  apt:
+    packages:
+    - gcc
 install:
     - pip install python-snappy
     - pip install flake8  # pytest  # add another testing frameworks later
