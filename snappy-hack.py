@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import snappy
 
 def out(x):
