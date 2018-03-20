@@ -16,8 +16,8 @@ addons:
     packages:
     - gcc
 install:
-    - pip install python-snappy
-    # - python setup.py build
+    # - pip install python-snappy
+    - python setup.py build
     - python setup.py install
     - pip install flake8  # pytest  # add another testing frameworks later
 before_script:
