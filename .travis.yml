@@ -1,20 +1,9 @@
-# sudo: required
 language: python
 addons:
   apt:
     packages:
-    #- gcc  # v4.8.4
     - libsnappy-dev
-    #- gcc-6
-    #- gcc-7
 install:
-  #- gcc --version
-  #- sudo apt-get install libsnappy-dev
-  #- sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
-  #- sudo apt-get update
-  #- sudo apt-get install gcc-7
-  #- gcc-7 --version
-  #- gcc --version
   - pip install python-snappy
 script:
-  - true
+  - python snappy_hack.py
