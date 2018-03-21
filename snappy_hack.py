@@ -2,21 +2,21 @@
 
 import snappy
 
-def out(x):
-    print(type(x), len(x), x)
+def out(name, x):
+    print(name +':', type(x), len(x), x)
 
 s = 'The quick brown fox jumped over the lazy dog.'
-out(s)
+out('s', s)
 compressed = snappy.compress(s)
-out(compressed)
+out('compressed', compressed)
 try:
     buf = buffer(compressed)
-    out(buf)
+    out('buf', buf)
     buf_d = snappy.decompress(buf)
-    out(buf_d)
+    out('buf_d', buf_d)
 except NameError:
     print('buffer was removed from Python 3.')
 mem = memoryview(compressed)
-out(mem)
-mem_d = snappy.decompress(mem)
-out(mem_d)
+out('mem', mem)
+mem_d = snappy.decompress(mem)  # <-- TypeError: argument 1 must be string or read-only buffer, not memoryview
+out('mem_d', mem_d)
