@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding=utf-8
 
 """
 $ python snappy_hack.py
@@ -21,7 +22,7 @@ import snappy
 fmt = '{:10} {:19} {} {}'
 
 def out(name, x):
-    print(fmt.format(name, type(x), len(x), x))
+    print(fmt.format(name, str(type(x)), len(x), x))
 
 s = 'The quick brown fox jumped over the lazy dog.'
 out('s', s)
