@@ -2,7 +2,7 @@
 
 import snappy
 
-fmt = '{:>9} {:14} {} {}'
+fmt = '{:10} {:19} {} {}'
 
 def out(name, x):
     print(fmt.format(name, type(x), len(x), x))
