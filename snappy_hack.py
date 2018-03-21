@@ -2,8 +2,10 @@
 
 import snappy
 
+fmt = '{:12}{:10}{:5}{}'
+
 def out(name, x):
-    print(name +':', type(x), len(x), x)
+    print(fmt.format(name, type(x), len(x), x))
 
 s = 'The quick brown fox jumped over the lazy dog.'
 out('s', s)
