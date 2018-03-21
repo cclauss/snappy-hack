@@ -39,6 +39,6 @@ except NameError:
 mem = memoryview(compressed)
 out('mem', mem)
 mem_bin_d = snappy.decompress(six.binary_type(mem))
-out('mem_bin_d', str_mem_d)
+out('mem_bin_d', mem_bin_d)
 mem_d = snappy.decompress(mem)  # <-- TypeError: argument 1 must be string or read-only buffer, not memoryview
 out('mem_d', mem_d)
