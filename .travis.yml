@@ -3,7 +3,7 @@ language: python
 addons:
   apt:
     packages:
-    - gcc  # v4.8.4
+    #- gcc  # v4.8.4
     - libsnappy-dev
     #- gcc-6
     #- gcc-7
