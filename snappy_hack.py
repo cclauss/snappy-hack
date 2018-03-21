@@ -17,6 +17,7 @@ Traceback (most recent call last):
 TypeError: argument 1 must be string or read-only buffer, not memoryview
 """
 
+import six
 import snappy
 
 fmt = '{:10} {:19} {} {}'
@@ -37,7 +38,7 @@ except NameError:
     print('buffer was removed from Python 3.')
 mem = memoryview(compressed)
 out('mem', mem)
-str_mem_d = str(snappy.decompress(mem))
-out('str_mem_d', str_mem_d)
+mem_bin_d = snappy.decompress(six.binary_type(mem))
+out('mem_bin_d', str_mem_d)
 mem_d = snappy.decompress(mem)  # <-- TypeError: argument 1 must be string or read-only buffer, not memoryview
 out('mem_d', mem_d)
