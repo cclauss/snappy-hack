@@ -2,7 +2,8 @@ language: python
 addons:
   apt:
     packages:
-    - gcc
+    #- gcc  # v4.8.4
+    - gcc-7
 install:
   - gcc --version
   - pip install python-snappy
