@@ -1,5 +1,21 @@
 #!/usr/bin/env python
 
+"""
+$ python snappy_hack.py
+
+s          <type 'str'>        45 The quick brown fox jumped over the lazy dog.
+compressed <type 'str'>        47 -�The quick brown fox jumped over the lazy dog.
+buf        <type 'buffer'>     47 -�The quick brown fox jumped over the lazy dog.
+buf_d      <type 'str'>        45 The quick brown fox jumped over the lazy dog.
+mem        <type 'memoryview'> 47 <memory at 0x7ffa61147478>
+Traceback (most recent call last):
+  File "snappy_hack.py", line 23, in <module>
+    mem_d = snappy.decompress(mem)  # <-- TypeError: argument 1 must be string or read-only buffer, not memoryview
+  File "/home/travis/virtualenv/python2.7.14/lib/python2.7/site-packages/snappy/snappy.py", line 91, in uncompress
+    return _uncompress(data)
+TypeError: argument 1 must be string or read-only buffer, not memoryview
+"""
+
 import snappy
 
 fmt = '{:10} {:19} {} {}'
@@ -20,5 +36,7 @@ except NameError:
     print('buffer was removed from Python 3.')
 mem = memoryview(compressed)
 out('mem', mem)
+str_mem_d = str(snappy.decompress(mem))
+out('str_mem_d', str_mem_d)
 mem_d = snappy.decompress(mem)  # <-- TypeError: argument 1 must be string or read-only buffer, not memoryview
 out('mem_d', mem_d)
