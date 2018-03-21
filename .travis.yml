@@ -4,6 +4,7 @@ addons:
     packages:
     - gcc
 install:
+  - gcc --version
   - pip install python-snappy
 script:
   - true
