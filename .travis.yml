@@ -6,4 +6,4 @@ addons:
 install:
   - pip install python-snappy
 script:
-  - python snappy-hack.py
+  - true
